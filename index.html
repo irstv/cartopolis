@@ -1,0 +1,230 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <title>Cartopolis</title>
+        <meta name="description" content="Cartopolis : l'Infrastructure de Données Spatiales de l'IRSTV">
+        <meta name="author" content="Erwan Bocher">
+
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+
+        <!-- CSS Reset -->
+        <link rel="stylesheet" href="css/reset.css">
+        <!-- Global CSS for the page and tiles -->
+        <link rel="stylesheet" href="css/main.css">
+        <!-- Specific CSS for the tiles -->
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+
+    <body>
+
+        <div id="container">
+            <div class="logo">
+                <img src="resources/cartopolis_4.png" width="200" />
+                <h1>L'Infrastructure de Données Spatiales sur la ville</h1>
+            </div>
+            <!--
+             Ces tags sont utilisés pour filtrer les cadres dynamiquement
+            -->
+            <br/>
+            <ul id="filters">
+                <li data-filter="all" >Tous</li>
+                <li data-filter="carte">Cartes</li>
+                <li data-filter="catalogue">Catalogues</li>
+                <li data-filter="outil">Outils</li>
+                <li data-filter="autres">Autres</li>                 
+            </ul>
+            <ul id="about">
+                <li>
+                    <a href="#" data-width="300" data-rel="about_popup" class="poplight">A propos</a>
+                </li>
+            </ul>
+            <br/>  
+
+
+            <div id="main" role="main">
+
+                <ul id="tiles">
+                    <!--
+                      These are our grid items. Notice how each one has classes assigned that
+                      are used for filtering. The classes match the "data-filter" properties above.
+                    -->                   
+                    <li data-filter-class='["all", "carte"]'>
+                        <a href="http://webcarto.orbisgis.org" target="blank">                            
+                            <img src="resources/noise_map.png" width="200">
+                        </a>
+                        <p>Cartographie du bruit à Nantes réalisée dans le cadre de l'ANR EvalPDU.</p>
+                    </li>
+                    <li data-filter-class='["all", "carte"]'>
+                        <a href="http://webcarto.orbisgis.org/evalpdu_map.html" target="blank">                            
+                            <img src="resources/noise_comparator.png" width="200">
+                        </a>
+                        <p>Comparaison de scénarios d'évolution du plan de déplacement urbain Nantais.</p>
+                    </li>
+                    <li data-filter-class='["all", "catalogue"]'>
+                        <a href="http://www.cartopolis.org/geonetwork/apps/search/?hl=fre" target="blank">                            
+                            <img src="resources/geocatalog.png" width="200">
+                        </a>
+                        <p>Catalogue de métadonnées géographiques.</p>
+                    </li>
+                    <li data-filter-class='["all", "catalogue"]'>
+                        <a href="http://services.orbisgis.org" target="blank">                            
+                            <img src="resources/orbismapcatalog.png" width="200">
+                        </a> 
+                        <p>OrbisMapCatalog: plate-forme de partage de cartes.</p>
+                    </li>
+
+                    <li data-filter-class='["all", "outil"]'>
+                        <a href="http://www.orbisgis.org" target="blank">                            
+                            <img src="resources/orbisgis.png" width="200">
+                        </a> 
+                        <p>OrbisGIS: un SIG open source pour et par la recherche.</p>
+                    </li>
+
+                    <li data-filter-class='["all", "outil"]'>
+                        <a href="http://www.orbisgis.org/projects/cts/" target="blank">                            
+                            <img src="resources/cts.png" width="200">
+                        </a> 
+                        <p>CTS : une bibliothèque pour la gestion des projections.</p>
+                    </li>
+                    <li data-filter-class='["all", "outil"]'>
+                        <a href="https://github.com/irstv/Java-Network-Analyzer" target="blank">                            
+                            <img src="resources/jna.png" width="200">
+                        </a> 
+                        <p>Java Network Analyzer : analyser les graphes avec OrbisGIS.</p>
+                    </li>
+ 		    <li data-filter-class='["all", "outil"]'>
+                        <a href="http://www.cartopolis.org" target="blank">                            
+                            <img src="resources/wiki.png" width="200">
+                        </a> 
+                        <p>Wiki de Cartopolis pour de plus amples informations sur le projet.</p>
+                    </li>
+                    <!-- End of grid blocks -->
+                </ul>
+            </div>
+        </div>
+
+        <!--POPUP START-->
+        <div id="about_popup" class="popup_block">
+            <a href="http://www.cartopolis.org"><img src="resources/cartopolis_logo.png" width="50" alt="CartoPOLIS" style="float: right; margin: 50px 0 0 20px;" /></a>
+            <h2>A propos de CartoPOLIS</h2>
+
+            <p>
+                Le projet CartoPOLIS est piloté par l'<a href="http://www.irstv.fr/index.php?option=com_content&amp;view=category&amp;layout=blog&amp;id=15&amp;Itemid=39&amp;lang=fr"  target="blank" title="http://www.irstv.fr/index.php?option=com_content&amp;view=category&amp;layout=blog&amp;id=15&amp;Itemid=39&amp;lang=fr"  >Atelier SIG</a> de l&#039;IRSTV. Il vise à construire une plate-forme commune et interopérable pour stocker, collecter, traiter et diffuser les données sur la ville ayant une composante géospatiale. 
+            </p>         
+
+            <p>
+                Le projet s'inscrit à l'interface de 5 axes de recherche: l'observation, la simulation, les bases de données,  la production de connaissances spatialisées et la diffusion - valorisation scientifique.
+            </p>
+            <p>
+                <strong>En savoir plus ?</strong> Visitez <a href="http://www.cartopolis.org/start" target="blank">la page de présentation du projet</a></p>
+
+        </div>
+
+
+        <!-- include jQuery -->
+        <script src="js/jquery.min.js"></script>
+
+        <!-- Include the imagesLoaded plug-in -->
+        <script src="js/jquery.imagesloaded.js"></script>
+
+        <!-- Include the plug-in -->
+        <script src="js/jquery.wookmark.js"></script>
+
+
+        <!-- Once the page is loaded, initalize the plug-in. -->
+        <script type="text/javascript">
+            (function($) {
+                $('#tiles').imagesLoaded(function() {
+                    // Prepare layout options.
+                    var options = {
+                        autoResize: true, // This will auto-update the layout when the browser window is resized.
+                        container: $('#main'), // Optional, used for some extra CSS styling
+                        offset: 2, // Optional, the distance between grid items
+                        itemWidth: 210, // Optional, the width of a grid item
+                        fillEmptySpace: true // Optional, fill the bottom of each column with widths of flexible height
+                    };
+
+                    // Get a reference to your grid items.
+                    var handler = $('#tiles li'),
+                            filters = $('#filters li');
+
+                    // Call the layout function.
+                    handler.wookmark(options);
+
+                    /**
+                     * When a filter is clicked, toggle it's active state and refresh.
+                     */
+                    var onClickFilter = function(event) {
+                        var item = $(event.currentTarget),
+                                activeFilters = [];
+
+                        if (!item.hasClass('active')) {
+                            filters.removeClass('active');
+                        }
+                        item.toggleClass('active');
+
+                        // Filter by the currently selected filter
+                        if (item.hasClass('active')) {
+                            activeFilters.push(item.data('filter'));
+                        }
+                        handler.wookmarkInstance.filter(activeFilters);
+                    }
+
+                    // Capture filter click events.
+                    filters.click(onClickFilter);
+                });
+            })(jQuery);
+        </script>
+
+        <!-- Open a popup message. -->
+        <script>
+            jQuery(function($) {
+
+                //When you click on a link with class of poplight and the href starts with a # 
+                $('a.poplight').on('click', function() {
+                    var popID = $(this).data('rel'); //Get Popup Name
+                    var popWidth = $(this).data('width'); //Gets Popup Width
+
+                    //Fade in the Popup and add close button
+                    $('#' + popID).fadeIn().css({'width': popWidth}).prepend('<a href="#" class="close"><img src="resources/close_pop.png" class="btn_close" title="Fermer la fenêtre" alt="Close" /></a>');
+
+                    //Define margin for center alignment (vertical + horizontal) - we add 80 to the height/width to accomodate for the padding + border width defined in the css
+                    var popMargTop = ($('#' + popID).height() + 80) / 2;
+                    var popMargLeft = ($('#' + popID).width() + 80) / 2;
+
+                    //Apply Margin to Popup
+                    $('#' + popID).css({
+                        'margin-top': -popMargTop,
+                        'margin-left': -popMargLeft
+                    });
+
+                    //Fade in Background
+                    $('body').append('<div id="fade"></div>'); //Add the fade layer to bottom of the body tag.
+                    $('#fade').css({'filter': 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer 
+
+                    return false;
+                });
+
+
+                //Close Popups and Fade Layer
+                $('body').on('click', 'a.close, #fade', function() { //When clicking on the close or fade layer...
+                    $('#fade , .popup_block').fadeOut(function() {
+                        $('#fade, a.close').remove();
+                    }); //fade them both out
+
+                    return false;
+                });
+
+
+            });
+        </script>
+
+    </body>
+</html>

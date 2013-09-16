@@ -1,0 +1,154 @@
+
+/** General page styling **/
+html {
+    background-color: #ffffff;
+}
+
+/*--Gérer la position fixed pour IE6--*/
+html #fade {
+    position: absolute;
+}
+html .popup_block {
+    position: absolute;
+}
+
+#main {
+    margin: 30px 0;
+    position: relative;
+}
+
+header h1 {
+    color: #777;
+    text-align: left;    
+    font-size: 24px;
+    font-weight: normal;
+    margin: 30px 0 3px 0;
+    margin-left: 70px;
+}
+
+header p {
+    text-align: center;
+    font-size: 13px;
+    color: #777;
+    margin: 0;
+}
+
+div.logo{
+    overflow:hidden;
+    margin-top: 5px;
+}
+
+div.logo img {
+    width: 200px;   
+    float: left;
+    margin-left: 70px;
+}
+
+div.logo h1 {
+    color: #777;
+    text-align: center;    
+    font-size: 24px;
+    font-weight: normal;
+    margin: 30px 0 3px 0;
+    margin-left: 70px;
+    text-shadow:5px 5px #ddd;
+}
+
+/**
+ * Grid container
+ */
+#tiles {
+    list-style-type: none;
+    position: relative; /** Needed to ensure items are laid out relative to this container **/
+    margin: 0;
+    padding: 0;
+}
+
+
+/**
+ * Grid items
+ */
+#tiles li {
+    width: 200px;
+    background-color: #ffffff;
+    border: 1px solid #dedede;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    display: none; /** Hide items initially to avoid a flicker effect **/
+    cursor: pointer;
+    padding: 4px;}
+
+#tiles li:hover {
+    background-color:  #d2e8fd}
+
+#tiles li.inactive {
+    visibility: hidden;
+    opacity: 0;    
+    background-color: #ffffff;
+}
+
+#tiles li img {
+    display: block;
+}
+
+/**
+ * Grid item text
+ */
+#tiles li p {
+    color: #777;
+    font-size: 10px;
+    margin: 7px 0 0 7px;
+}
+
+
+/**
+ * Placerholder css
+ */
+/*.wookmark-placeholder {
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    background-color: #ffffff;
+    *border: 1px solid #dedede;*
+    z-index: -1;
+}*/
+
+/**
+This style is used to manage the modal window thanks to 
+http://sohtanaka.developpez.com/tutoriels/javascript/creez-fenetre-modale-avec-css-et-jquery/
+**/
+
+
+#fade { /*--Masque opaque noir de fond--*/
+    display: none; /*--masqué par défaut--*/
+    background: #000;
+    position: fixed; left: 0; top: 0;
+    width: 100%; height: 100%;
+    opacity: .80;
+    z-index: 9999;
+}
+.popup_block{
+    display: none; /*--masqué par défaut--*/
+    background: #fff;
+    padding: 20px;
+    border: 20px solid #ddd;
+    float: left;
+    font-size: 1.2em;
+    position: fixed;
+    top: 50%; left: 50%;
+    z-index: 99999;
+    /*--Les différentes définitions de Box Shadow en CSS3--*/
+    -webkit-box-shadow: 0px 0px 20px #000;
+    -moz-box-shadow: 0px 0px 20px #000;
+    box-shadow: 0px 0px 20px #000;
+    /*--Coins arrondis en CSS3--*/
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+img.btn_close {
+    float: right;
+    margin: -55px -55px 0 0;
+}
+
