@@ -43,7 +43,7 @@
      -moz-border-radius: 3px;
           border-radius: 3px;
           box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.2) inset;   
-    transition: background-color ease-in 1.3s;
+    transition: background-color ease-in 0.3s;
 }
 
 #filters li:hover {
@@ -79,7 +79,7 @@
      -moz-border-radius: 3px;
           border-radius: 3px;
           box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.2) inset;
-	transition: background-color ease-in 1.3s;
+	transition: background-color ease-in 0.3s;
 }
 
 #about li:hover {
