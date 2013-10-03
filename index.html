@@ -19,11 +19,12 @@
         <link rel="stylesheet" href="css/main.css">
         <!-- Specific CSS for the tiles -->
         <link rel="stylesheet" href="css/style.css">
+ 	<!--  Attach the Reveal CSS -->
+	<link rel="stylesheet" href="css/reveal.css">
 
     </head>
 
     <body>
-
         <div id="container">
             <div class="logo">
                 <img src="resources/cartopolis_4.png" width="200" />
@@ -42,7 +43,7 @@
             </ul>
             <ul id="about">
                 <li>
-                    <a href="#" data-width="300" data-rel="about_popup" class="poplight">A propos</a>
+			<a href="#" data-reveal-id="myModal">A propos</a>
                 </li>
             </ul>
             <br/>  
@@ -91,13 +92,13 @@
                         <a href="http://www.orbisgis.org" target="blank">                            
                             <img src="resources/cts.png" width="200">
                         </a> 
-                        <p>CTS : une bibliothèque pour la gestion des projections.</p>
+                        <p>CTS : une bibliothèque pour la gestion des projections géographiques.</p>
                     </li>
                     <li data-filter-class='["all", "outil"]'>
                         <a href="http://www.orbisgis.org" target="blank">                            
                             <img src="resources/jna.png" width="200">
                         </a> 
-                        <p>Java Network Analyzer : analyser les graphes avec OrbisGIS.</p>
+                        <p>Java Network Analyzer : analyser les graphes routiers avec le SIG OrbisGIS.</p>
                     </li>
                     <li data-filter-class='["all", "autres"]'>
                         <a href="http://www.cartopolis.org" target="blank" title="Wiki de CartoPOLIS">                            
@@ -108,26 +109,7 @@
                     <!-- End of grid blocks -->
                 </ul>
             </div>
-        </div>
-
-        <!--POPUP START-->
-        <div id="about_popup" class="popup_block">
-
-            <a href="http://www.cartopolis.org"><img src="resources/cartopolis_logo.png" width="50" alt="CartoPOLIS" style="float: right; margin: 50px 0 0 20px;" /></a>
-            <h2>A propos de CartoPOLIS</h2>
-
-            <p>
-                Le projet CartoPOLIS est piloté par l'<a href="http://www.irstv.fr/index.php?option=com_content&amp;view=category&amp;layout=blog&amp;id=15&amp;Itemid=39&amp;lang=fr"  target="blank" title="Atelier SIG de l'IRSTV"><u>Atelier SIG</u></a> de l'IRSTV. Il vise à construire une plate-forme commune et interopérable pour stocker, collecter, traiter et diffuser les données sur la ville ayant une composante géospatiale. 
-            </p>         
-
-            <p>
-                Le projet s'inscrit à l'interface de 5 axes de recherche: l'observation, la simulation, les bases de données,  la production de connaissances spatialisées et la diffusion - valorisation scientifique.
-            </p>
-            <p>
-                <strong>En savoir plus ?</strong> Visitez <a href="http://www.cartopolis.org/start" target="blank" title="Wiki de CartoPOLIS"><u>la page de présentation du projet</u>.</a></p>
-
-
-        </div>
+        </div>        
 
 
         <!-- include jQuery -->
@@ -138,6 +120,9 @@
 
         <!-- Include the plug-in -->
         <script src="js/jquery.wookmark.js"></script>
+
+ 	<!-- Then just attach the Reveal plugin -->
+	<script src="js/jquery.reveal.js" type="text/javascript"></script>
 
 
         <!-- Once the page is loaded, initalize the plug-in. -->
@@ -184,49 +169,23 @@
                 });
             })(jQuery);
         </script>
+        
 
-        <!-- Open a popup message. -->
-        <script>
-            jQuery(function($) {
+	<div id="myModal" class="reveal-modal">
+     		<a href="http://www.cartopolis.org"><img src="resources/cartopolis_logo.png" width="50" alt="CartoPOLIS" style="float: right; margin: 50px 0 0 20px;" /></a>
+            <h2>A propos de CartoPOLIS</h2>
 
-                //When you click on a link with class of poplight and the href starts with a # 
-                $('a.poplight').on('click', function() {
-                    var popID = $(this).data('rel'); //Get Popup Name
-                    var popWidth = $(this).data('width'); //Gets Popup Width
+            <p>
+                Le projet CartoPOLIS est piloté par l'<a href="http://www.irstv.fr/index.php?option=com_content&amp;view=category&amp;layout=blog&amp;id=15&amp;Itemid=39&amp;lang=fr"  target="blank" title="Atelier SIG de l'IRSTV"><u>Atelier SIG</u></a> de l'IRSTV. Il vise à construire une plate-forme commune et interopérable pour stocker, collecter, traiter et diffuser les données sur la ville ayant une composante géospatiale. 
+            </p>         
 
-                    //Fade in the Popup and add close button
-                    $('#' + popID).fadeIn().css({'width': popWidth}).prepend('<a href="#" class="close"><img src="resources/close_pop.png" class="btn_close" title="Fermer la fenêtre" alt="Close" /></a>');
-
-                    //Define margin for center alignment (vertical + horizontal) - we add 80 to the height/width to accomodate for the padding + border width defined in the css
-                    var popMargTop = ($('#' + popID).height() + 80) / 2;
-                    var popMargLeft = ($('#' + popID).width() + 80) / 2;
-
-                    //Apply Margin to Popup
-                    $('#' + popID).css({
-                        'margin-top': -popMargTop,
-                        'margin-left': -popMargLeft
-                    });
-
-                    //Fade in Background
-                    $('body').append('<div id="fade"></div>'); //Add the fade layer to bottom of the body tag.
-                    $('#fade').css({'filter': 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer 
-
-                    return false;
-                });
-
-
-                //Close Popups and Fade Layer
-                $('body').on('click', 'a.close, #fade', function() { //When clicking on the close or fade layer...
-                    $('#fade , .popup_block').fadeOut(function() {
-                        $('#fade, a.close').remove();
-                    }); //fade them both out
-
-                    return false;
-                });
-
-
-            });
-        </script>
+            <p>
+                Le projet s'inscrit à l'interface de 5 axes de recherche: l'observation, la simulation, les bases de données,  la production de connaissances spatialisées et la diffusion - valorisation scientifique.
+            </p>
+            <p>
+                <strong>En savoir plus ?</strong> Visitez <a href="http://www.cartopolis.org/start" target="blank" title="Wiki de CartoPOLIS"><u>la page de présentation du projet</u>.</a></p>
+     		<a class="close-reveal-modal">&#215;</a>
+	</div>
 
     </body>
 </html>
