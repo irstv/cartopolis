@@ -7,6 +7,6 @@ It offers a unique way to follow the project and all SDI changes.
 
 
 Thanks to the open source community:
-* http://jquery.com/
-* https://github.com/GBKS/Wookmark-jQuery
-* http://zurb.com/playground/reveal-modal-plugin
+* [jQuery](http://jquery.com/)
+* [jQuery Wookmark](https://github.com/GBKS/Wookmark-jQuery)
+* [Reveal modal plugin](http://zurb.com/playground/reveal-modal-plugin)
