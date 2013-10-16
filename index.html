@@ -19,8 +19,8 @@
         <link rel="stylesheet" href="css/main.css">
         <!-- Specific CSS for the tiles -->
         <link rel="stylesheet" href="css/style.css">
- 	<!--  Attach the Reveal CSS -->
-	<link rel="stylesheet" href="css/reveal.css">
+        <!--  Attach the Reveal CSS -->
+        <link rel="stylesheet" href="css/reveal.css">
 
     </head>
 
@@ -43,7 +43,7 @@
             </ul>
             <ul id="about">
                 <li>
-			<a href="#" data-reveal-id="myModal">A propos</a>
+                    <a href="#" data-reveal-id="myModal">A propos</a>
                 </li>
             </ul>
             <br/>  
@@ -54,7 +54,13 @@
                     <!--
                       These are our grid items. Notice how each one has classes assigned that
                       are used for filtering. The classes match the "data-filter" properties above.
-                    -->                   
+                    -->
+                    <li data-filter-class='["all", "carte"]'>
+                        <a href="http://webcarto.orbisgis.org/communes.html" target="blank">                            
+                            <img src="images/communes.png" width="200">
+                        </a>
+                        <p>Evolutions demographique et géographique des communes en Loire Atlantique.</p>
+                    </li>
                     <li data-filter-class='["all", "carte"]'>
                         <a href="http://webcarto.orbisgis.org/noisemap.html" target="blank">                            
                             <img src="images/noise_map.png" width="200">
@@ -66,13 +72,7 @@
                             <img src="images/noise_comparator.png" width="200">
                         </a>
                         <p>Comparaison de scénarios d'évolution du plan de déplacement urbain Nantais.</p>
-                    </li>
-			<li data-filter-class='["all", "carte"]'>
-                        <a href="http://webcarto.orbisgis.org/communes.html" target="blank">                            
-                            <img src="images/communes.png" width="200">
-                        </a>
-                        <p>Evolutions demographique et géographique des communes en Loire Atlantique.</p>
-                    </li>
+                    </li>			
                     <li data-filter-class='["all", "catalogue"]'>
                         <a href="http://www.cartopolis.org/geonetwork/apps/search/?hl=fre" target="blank">                            
                             <img src="images/geocatalog.png" width="200">
@@ -126,8 +126,8 @@
         <!-- Include the plug-in -->
         <script src="js/jquery.wookmark.js"></script>
 
- 	<!-- Then just attach the Reveal plugin -->
-	<script src="js/jquery.reveal.js" type="text/javascript"></script>
+        <!-- Then just attach the Reveal plugin -->
+        <script src="js/jquery.reveal.js" type="text/javascript"></script>
 
 
         <!-- Once the page is loaded, initalize the plug-in. -->
@@ -174,10 +174,10 @@
                 });
             })(jQuery);
         </script>
-        
 
-	<div id="myModal" class="reveal-modal">
-     		<a href="http://www.cartopolis.org"><img src="images/cartopolis_logo.png" width="50" alt="CartoPOLIS" style="float: right; margin: 50px 0 0 20px;" /></a>
+
+        <div id="myModal" class="reveal-modal">
+            <a href="http://www.cartopolis.org"><img src="images/cartopolis_logo.png" width="50" alt="CartoPOLIS" style="float: right; margin: 50px 0 0 20px;" /></a>
             <h2>A propos de CartoPOLIS</h2>
 
             <p>
@@ -189,8 +189,8 @@
             </p>
             <p>
                 <strong>En savoir plus ?</strong> Visitez <a href="http://www.cartopolis.org/wiki" target="blank" title="Wiki de CartoPOLIS"><u>la page de présentation du projet</u>.</a></p>
-     		<a class="close-reveal-modal">×</a>
-	</div>
+            <a class="close-reveal-modal">×</a>
+        </div>
         <div class="reveal-modal-bg"></div>
 
     </body>
